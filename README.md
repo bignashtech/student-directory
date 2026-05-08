@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+﻿# Student Profile Directory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application that displays a directory of student profiles using reusable components, props, conditional rendering, and state management.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This project demonstrates a simple student directory app built with React. The app renders a list of student cards from an array, shows each student's status, and allows toggling active/inactive status with a button.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Displays 6 unique student profiles
+- Reusable component structure: `Header`, `ProfileList`, `ProfileCard`, and `Footer`
+- Data is passed via props and rendered dynamically with `map()`
+- Conditional rendering for Active / Inactive status
+- Uses React `useState` to manage student data and update UI
+- Responsive card layout with clean styling
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Component Structure
 
-### `npm test`
+- `src/App.js` - main app component with state and student data
+- `src/components/Header.js` - application title and subtitle
+- `src/components/ProfileList.js` - renders `ProfileCard` components from student data
+- `src/components/ProfileCard.js` - shows student details and toggle button
+- `src/components/Footer.js` - displays the total number of students
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Install dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Run locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Build for production
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This creates an optimized production build in the `build` folder.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## How it works
+
+- Students are stored in an array inside `App.js`.
+- `App` uses `useState` to manage the students list.
+- `ProfileList` receives the array as props and renders a `ProfileCard` for each student.
+- `ProfileCard` shows student properties and renders Active/Inactive using conditional JSX.
+- Clicking the button calls the `toggleActive` function passed from `App`.
+
+## Student Data
+
+Each student object includes:
+
+- `id`
+- `name`
+- `track`
+- `bio`
+- `skillLevel`
+- `isActive`
+
+## Notes
+
+- The app is built with React 19 and Create React App.
+- Styling is contained in `src/App.css` for a simple, polished interface.
+- No backend or external APIs are required.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For more information on React, visit the [React documentation](https://reactjs.org/).
